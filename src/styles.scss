@@ -4,3 +4,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.form-btn{
+  width: 40%;
+  position: relative;
+  align-self: center;
+  transition: all 200ms ease-in-out;
+}
+
+
+.form-btn:hover {
+  background-color: black;
+  width: 100%;
+  position: relative;
+  transition: all 200ms ease-in-out;
+}

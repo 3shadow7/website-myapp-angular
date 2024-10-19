@@ -1,0 +1,14 @@
+.getstarted-btn {
+  color: black;
+  border: solid 2px black;
+  background-color: whitesmoke;
+  transition: all 200ms;
+  margin-top: 2em;
+}
+
+.getstarted-btn:hover{
+  color: white;
+  border: solid 2px black;
+  background-color: black;
+  transform: scale(1.1);
+}

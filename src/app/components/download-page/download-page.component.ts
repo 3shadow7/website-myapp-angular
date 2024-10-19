@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: './download-page.component.html',
   styleUrl: './download-page.component.scss',
 })
-export class DownloadPageComponent {}
+export class DownloadPageComponent {
+  downloadFileAndroid() {
+    console.log('download andriod file started');
+  }
+  downloadFileIOS() {
+    console.log('download ios file started');
+  }
+}
