@@ -1,3 +1,18 @@
+
+NumpadAdd::SendInput, ^c
+NumpadEnter::SendInput, ^v
+Numpad0::SendInput, ^s
+Numpad1::SendInput, ^z
+Numpad2::SendInput, ^y
+NumpadSub::SendInput, ^x
+
+
+
+
+
+
+
+
 # Allinoneapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
