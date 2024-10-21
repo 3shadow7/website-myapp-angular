@@ -109,6 +109,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.ActivatedRoute.queryParams.subscribe((params) => {
       console.log('ngOnInit login is worked');
+
+
       switch (params['from']) {
         case 'download':
           setTimeout(() => {

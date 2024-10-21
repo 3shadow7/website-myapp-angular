@@ -2,8 +2,20 @@
   height: 90vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
+
+.box {
+  display: flex;
+  height: 70vh;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  flex-direction: column-reverse;
+}
+
 .container-comments {
+  height: 70vh;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -20,7 +32,15 @@
   align-items: center;
   flex-wrap: nowrap;
   border: solid 2px black;
+  overflow-x: hidden;
+  overflow-y: scroll; /* Allow vertical scrolling */
+  scrollbar-width: thin; /* Make the scrollbar thin */
+  scrollbar-color: black transparent; /* Hide the scrollbar */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
+
 
 .btn-comment {
   position: sticky;
@@ -38,7 +58,7 @@
   transition: 200ms;
 }
 
-#card {
+.cardd {
   text-align: center;
   width: 70%;
   height: max-content;
@@ -56,8 +76,8 @@
   color: gray;
   position: relative;
   border-radius: 1em 1em 0 0;
-  border: solid 3px black;
+  border: solid 2px black;
   border-bottom: 0;
-  width: 35%;
-  transform: translate(10%);
+  width: 25%;
+  transform: translate(20%);
 }
