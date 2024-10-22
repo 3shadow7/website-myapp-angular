@@ -1,0 +1,9 @@
+.img-aboutUS {
+border: solid 2px black;
+transition: transform 100ms;
+}
+
+.img-aboutUS:hover{
+  transform: scale(1.1);
+  transition: transform 100ms;
+}
