@@ -19,3 +19,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   position: relative;
   transition: all 200ms ease-in-out;
 }
+
+::selection {
+  background-color: gray;
+  color: white;
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: gray;
+  color: white;
+}

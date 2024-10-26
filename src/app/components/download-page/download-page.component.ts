@@ -1,5 +1,5 @@
 import { FormGroup, FormsModule } from '@angular/forms';
-import { MasterService } from './../../master.service';
+import { MasterService } from '../../services/master/master.service';
 import {
   Component,
   ElementRef,
@@ -64,8 +64,10 @@ export class DownloadPageComponent implements OnInit {
   scrollToBottom(): void {
     setTimeout(() => {
       if (this.scrollContainer) {
-        this.scrollContainer.nativeElement.scrollTop =
-          this.scrollContainer.nativeElement.scrollHeight;
+        this.scrollContainer.nativeElement.scroll({
+          top: this.scrollContainer.nativeElement.scrollHeight,
+          behavior: 'smooth'
+        });
       }
     }, 1);
   }

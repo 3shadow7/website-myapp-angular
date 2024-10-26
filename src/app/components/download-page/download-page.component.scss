@@ -73,10 +73,13 @@
 }
 
 .created-at {
+  font-size: .875rem;
+  display: contents;
+  /* text-align: center; */
   color: gray;
   position: relative;
-  border-radius: 1em 1em 0 0;
-  border: solid 2px black;
+  /* border-radius: 1em 1em 0 0; */
+  /* border: solid 2px black; */
   border-bottom: 0;
   width: 25%;
   transform: translate(20%);

@@ -2,7 +2,7 @@ import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, 
 import {  Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { CommonModule } from '@angular/common';
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth/auth.service';
 @Component({
   selector: 'app-root',
   standalone: true,

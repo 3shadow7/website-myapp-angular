@@ -7,3 +7,41 @@ transition: transform 100ms;
   transform: scale(1.1);
   transition: transform 100ms;
 }
+
+#card {
+  -webkit-animation: card 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 100ms both;
+  animation: card 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 100ms both;
+}
+
+#card:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+#card:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+#card:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+@-webkit-keyframes card {
+  0% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes card {
+  0% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
