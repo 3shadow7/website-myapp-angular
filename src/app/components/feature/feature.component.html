@@ -1,5 +1,15 @@
 
 <ag-grid-angular
 class="grid ag-theme-quartz"
+
 [rowData]="rowData"
-[columnDefs]="ColDef" />
+[columnDefs]="ColDef"
+
+[defaultColDef]="defultCol"
+
+
+[pagination]="true"
+[paginationPageSize]="13"
+[paginationPageSizeSelector]="[5,10,13,20]"
+
+ />

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { AgGridAngular, ICellRendererAngularComp } from 'ag-grid-angular';
 import { ColDef, ICellComp, ICellRendererParams } from 'ag-grid-community';
 import 'ag-grid-community/styles/ag-grid.css';
@@ -9,109 +9,231 @@ import 'ag-grid-community/styles/ag-theme-quartz.css';
   standalone: true,
   imports: [AgGridAngular],
   templateUrl: './feature.component.html',
-  styleUrls: ['./feature.component.scss']
+  styleUrl: './feature.component.scss',
 })
 export class FeatureComponent implements ICellRendererAngularComp {
-
   agInit(params: ICellRendererParams): void {
     throw new Error('Method not implemented.');
   }
   refresh(params: ICellRendererParams): boolean {
-    throw new Error('Method not implemented.');
-    return false;
+    return true;
   }
 
-
+  defultCol: ColDef = {
+    flex: 4,
+    cellClassRules: {
+      'bg-success': (p) => {
+        let substrings = [
+          'Yes',
+          'Extensive',
+          'Active',
+          'Monthly',
+          'All Android devices',
+          'High',
+          'High performance',
+          'Available',
+          '24/7',
+          'Regular',
+          'Cloud & Local',
+          'Singleplayer & Multiplayer',
+          'Available',
+          '24/7',
+          'Regular',
+        ];
+        let allIncluded = substrings.some((sub) => p.value === sub);
+        if (allIncluded) {
+          return true;
+        }
+        console.log(
+          p.value,
+          substrings.some((sub) => p.value === sub)
+        );
+        return false;
+      },
+      'bg-warning': (p) => {
+        let substrings = [
+          'Medium',
+          'Optional',
+          'Bi-Monthly',
+          'Growing',
+          'iOS 12 and above',
+          'Moderate',
+          'Business hours',
+          'Variable',
+          'Occasional',
+          'Cloud only',
+          'Singleplayer only',
+        ];
+        let allIncluded = substrings.some((sub) => p.value === sub);
+        if (allIncluded) {
+          return true;
+        }
+        console.log(
+          p.value,
+          substrings.some((sub) => p.value === sub)
+        );
+        return false;
+      },
+      'bg-danger': (p) => {
+        let substrings = ['No', 'Limited', 'Modern browsers', 'Coming soon'];
+        let allIncluded = substrings.some((sub) => p.value === sub);
+        if (allIncluded) {
+          return true;
+        }
+        console.log(
+          p.value,
+          substrings.some((sub) => p.value === sub)
+        );
+        return false;
+      },
+    },
+  };
 
   ColDef: ColDef[] = [
-    {field: "Feature/Aspect" , cellClass: 'first-column'},
-    {field:"Android Pixel Game App"},
-    {field:"Web Pixel Game App"},
-    {field:"iOS Pixel Game App"},
+    { headerName: 'Feature', field: 'feature', cellClass: 'first-column' },
+    { headerName: 'Android', field: 'android' },
+    { headerName: 'iOS', field: 'ios' },
+    { headerName: 'Web', field: 'web' },
   ];
 
-  rowData = [{
-    "Feature/Aspect": "Platform",
-    "Android Pixel Game App": "Android OS",
-    "Web Pixel Game App": "Cross-platform (browser-based)",
-    "iOS Pixel Game App": "iOS"
-  },
-  {
-    "Feature/Aspect": "Development Cost",
-    "Android Pixel Game App": "Moderate (Java/Kotlin)",
-    "Web Pixel Game App": "Generally lower (HTML/CSS/JS)",
-    "iOS Pixel Game App": "Higher (Swift/Objective-C)"
-  },
-  {
-    "Feature/Aspect": "User Experience",
-    "Android Pixel Game App": "Native gaming experience",
-    "Web Pixel Game App": "Limited by browser capabilities",
-    "iOS Pixel Game App": "Native gaming experience"
-  },
-  {
-    "Feature/Aspect": "Performance",
-    "Android Pixel Game App": "High (access to device resources)",
-    "Web Pixel Game App": "Moderate (browser performance varies)",
-    "iOS Pixel Game App": "High (optimized for iOS)"
-  },
-  {
-    "Feature/Aspect": "Graphics Quality",
-    "Android Pixel Game App": "High resolution and effects",
-    "Web Pixel Game App": "Limited by browser rendering",
-    "iOS Pixel Game App": "High resolution and effects"
-  },
-  {
-    "Feature/Aspect": "Offline Play",
-    "Android Pixel Game App": "Yes (local storage capabilities)",
-    "Web Pixel Game App": "Limited (mostly online)",
-    "iOS Pixel Game App": "Yes (local data storage)"
-  },
-  {
-    "Feature/Aspect": "Updates",
-    "Android Pixel Game App": "Manual via Play Store",
-    "Web Pixel Game App": "Instant updates (server-side)",
-    "iOS Pixel Game App": "Manual via App Store"
-  },
-  {
-    "Feature/Aspect": "Distribution",
-    "Android Pixel Game App": "Google Play Store",
-    "Web Pixel Game App": "Accessible via URL",
-    "iOS Pixel Game App": "App Store"
-  },
-  {
-    "Feature/Aspect": "Monetization",
-    "Android Pixel Game App": "In-app purchases, ads",
-    "Web Pixel Game App": "Ads, one-time purchase",
-    "iOS Pixel Game App": "In-app purchases, ads"
-  },
-  {
-    "Feature/Aspect": "Development Time",
-    "Android Pixel Game App": "Moderate to long",
-    "Web Pixel Game App": "Shorter (faster iterations)",
-    "iOS Pixel Game App": "Longer (more extensive testing)"
-  },
-  {
-    "Feature/Aspect": "Device Access",
-    "Android Pixel Game App": "Full access (input, sensors)",
-    "Web Pixel Game App": "Limited access",
-    "iOS Pixel Game App": "Full access (input, sensors)"
-  },
-  {
-    "Feature/Aspect": "User Engagement",
-    "Android Pixel Game App": "Push notifications, achievements",
-    "Web Pixel Game App": "Limited notifications",
-    "iOS Pixel Game App": "Push notifications, achievements"
-  },
-  {
-    "Feature/Aspect": "Security",
-    "Android Pixel Game App": "Moderate (device-specific)",
-    "Web Pixel Game App": "Depends on implementation",
-    "iOS Pixel Game App": "High (App Store review process)"
-  },
-  {
-    "Feature/Aspect": "Maintenance",
-    "Android Pixel Game App": "Ongoing (device fragmentation)",
-    "Web Pixel Game App": "Ongoing (browser compatibility)",
-    "iOS Pixel Game App": "Ongoing (iOS updates)"
-  }]
+  rowData = [
+    {
+      feature: 'Graphics Quality',
+      android: 'High',
+      ios: 'High',
+      web: 'Medium',
+    },
+    {
+      feature: 'Multiplayer Support',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'No',
+    },
+    {
+      feature: 'Touch Controls',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'No',
+    },
+    {
+      feature: 'Cross-Platform Play',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'Yes',
+    },
+    {
+      feature: 'In-Game Purchases',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'Optional',
+    },
+    {
+      feature: 'Achievements',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'Limited',
+    },
+    {
+      feature: 'Offline Mode',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'No',
+    },
+    {
+      feature: 'Updates Frequency',
+      android: 'Monthly',
+      ios: 'Monthly',
+      web: 'Bi-Monthly',
+    },
+    {
+      feature: 'Customization Options',
+      android: 'Extensive',
+      ios: 'Extensive',
+      web: 'Limited',
+    },
+    {
+      feature: 'User Community',
+      android: 'Active',
+      ios: 'Active',
+      web: 'Growing',
+    },
+    {
+      feature: 'Device Compatibility',
+      android: 'All Android devices',
+      ios: 'iOS 12 and above',
+      web: 'Modern browsers',
+    },
+    {
+      feature: 'Social Media Integration',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'Limited',
+    },
+    {
+      feature: 'Performance Optimization',
+      android: 'High performance',
+      ios: 'High performance',
+      web: 'Variable',
+    },
+    {
+      feature: 'Event Participation',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'No',
+    },
+    {
+      feature: 'Tutorials and Guides',
+      android: 'Available',
+      ios: 'Available',
+      web: 'Coming soon',
+    },
+    {
+      feature: 'Character Customization',
+      android: 'Extensive',
+      ios: 'Extensive',
+      web: 'Moderate',
+    },
+    {
+      feature: 'Graphic Settings Adjustments',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'Limited',
+    },
+    {
+      feature: 'Customer Support',
+      android: '24/7',
+      ios: '24/7',
+      web: 'Business hours',
+    },
+    {
+      feature: 'Community Events',
+      android: 'Regular',
+      ios: 'Regular',
+      web: 'Occasional',
+    },
+    {
+      feature: 'Save Game Progress',
+      android: 'Cloud & Local',
+      ios: 'Cloud & Local',
+      web: 'Cloud only',
+    },
+    {
+      feature: 'Game Modes',
+      android: 'Singleplayer & Multiplayer',
+      ios: 'Singleplayer & Multiplayer',
+      web: 'Singleplayer only',
+    },
+    {
+      feature: 'Beta Testing Opportunities',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'No',
+    },
+    {
+      feature: 'Accessibility Features',
+      android: 'Yes',
+      ios: 'Yes',
+      web: 'Limited',
+    },
+  ];
 }

@@ -1,12 +1,17 @@
 .grid{
   height: 65%;
-  width: 44%;
+  width: 65%;
   top: 50%;
   position: fixed;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.first-column{
-  background-color: #f0f0f0 !important;
+:host ::ng-deep .ag-row-odd .first-column  {
+  background-color: #fbfbfb;
 }
+
+:host ::ng-deep .ag-row-even .first-column  {
+  background-color: #f5f5f5;
+}
+
