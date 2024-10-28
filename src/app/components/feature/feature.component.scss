@@ -15,3 +15,14 @@
   background-color: #f5f5f5;
 }
 
+
+:host ::ng-deep .bgsuccess {
+  background-color: rgb(153 255 207) ;
+}
+:host ::ng-deep .bgwarning {
+  background-color: rgb(255, 253, 153) ;
+}
+:host ::ng-deep .bgdanger {
+  background-color: rgb(255, 153, 153) ;
+}
+
