@@ -26,3 +26,18 @@
   background-color: rgb(255, 153, 153) ;
 }
 
+
+
+:host ::ng-deep .ag-paging-panel {
+  justify-content: space-between;
+}
+:host ::ng-deep .ag-paging-page-size {
+  order: 0;
+}
+:host ::ng-deep .ag-paging-row-summary-panel {
+  order: 2;
+}
+:host ::ng-deep .ag-paging-page-summary-panel {
+  order: 1;
+}
+

@@ -4,7 +4,7 @@ import { LoginComponent } from '../app/components/login/login.component';
 import { AuthGuard } from '../app/services/auth/auth.guard';
 import { DownloadPageComponent } from '../app/components/download-page/download-page.component';
 import { AboutUsComponent } from '../app/components/about-us/about-us.component';
-import { Page404Component } from '../app/404/404.component';
+import { Page404Component } from '../app/components/404/404.component';
 import { SignupComponent } from '../app/components/signup/signup.component';
 import { FeatureComponent } from '../app/components/feature/feature.component';
 
