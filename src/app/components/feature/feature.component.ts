@@ -1,4 +1,4 @@
-import { rowData } from './../../sharing/constant';
+import { rowData } from '../../shared/constant';
 import { Component } from '@angular/core';
 
 import {

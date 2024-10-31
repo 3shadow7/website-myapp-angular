@@ -3,6 +3,8 @@
   <p class="lead text-center">
     We are dedicated to providing the best services for our customers.
   </p>
+  <input type="text" [value]="value$SG()" (keyup)="update_value$SG($event)">
+  <p>{{value$SG()}}</p>
 
   <h3 class="mt-5 text-center">Our Team</h3>
   <div class="row">

@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { AuthService } from '../../services/auth/auth.service';
+
 import { ToastModule } from 'primeng/toast';
-import { ButtonModule } from 'primeng/button';
-import { RippleModule } from 'primeng/ripple';
 import { MessageService } from 'primeng/api';
+
 import {
   AbstractControl,
   FormBuilder,
@@ -29,8 +29,6 @@ import {
     MatLabel,
     MatError,
     ToastModule,
-    ButtonModule,
-    RippleModule,
   ],
   providers: [MessageService],
 })
@@ -48,9 +46,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private AuthService: AuthService,
     private ActivatedRoute: ActivatedRoute,
-    private router: Router,
     private messageService: MessageService,
-    private elementRef: ElementRef
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, this.customEmailValidator]],

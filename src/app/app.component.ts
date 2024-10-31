@@ -12,7 +12,7 @@ import { AuthService } from './services/auth/auth.service';
 })
 
 export class AppComponent implements DoCheck {
-  log! :boolean;
+  log !:boolean;
 
 
   constructor( private AuthService:AuthService,private router: Router){
@@ -20,7 +20,6 @@ export class AppComponent implements DoCheck {
   }
   ngDoCheck(): void {
     this.log = this.AuthService.isLoggedIn() ;
-    console.log('hi')
   }
 
   logout(){
